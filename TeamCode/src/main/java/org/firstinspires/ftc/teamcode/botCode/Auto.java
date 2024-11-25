@@ -22,8 +22,13 @@ import org.firstinspires.ftc.teamcode.MecanumDrive;
     Follow those TO DO comments and fill in the tuning values, then come back to work on this file.
 
    TODO:
-    Roadrunner official site: https://learnroadrunner.com/
-    Roadrunner guide: https://rr.brott.dev/docs/
+    You will also need to have FTC dashboard downloaded to have more data values.
+    https://github.com/acmerobotics/ftc-dashboard/releases <- Github download
+    You can access the site with this URL: http://192.168.43.1:8080/dash
+
+   TODO:
+    https://learnroadrunner.com/ <- Roadrunner official site
+    https://rr.brott.dev/docs/ <- Roadrunner guide
     Need example code? https://rr.brott.dev/docs/v1-0/guides/centerstage-auto/
 */
 
@@ -72,7 +77,7 @@ public class Auto extends LinearOpMode {
         //Trajectory builders
         TrajectoryActionBuilder trajectoryName = drive.actionBuilder(initialPose)
                 .setTangent(Math.toRadians(0)) //Set the robots direction of travel (in radians)
-                .lineToX(24); //Create a trajectory path
+                .lineToY(24); //Create a trajectory path
 
         /* Other trajectory commands I found useful
          * - splineTo(Vector2d, tangent)
@@ -89,7 +94,7 @@ public class Auto extends LinearOpMode {
         Actions.runBlocking(
                 new SequentialAction(
                         setPos(1000), //Set's the arm to that position
-                        trajectoryName.build() //Run that trajectory
+                        trajectoryName.build() //Run's the trajectory
                 )
         );
     }
